@@ -26,6 +26,7 @@ class InquiryIdConfiguration extends InquiryConfiguration {
   /// accessToken
   final String? accessToken;
 
+  @override
   Map<String, dynamic> toJson() {
     return <String, dynamic>{
       'inquiryId': inquiryId,
@@ -64,13 +65,13 @@ class TemplateIdConfiguration extends InquiryConfiguration {
   /// Any string you want for your own bookkeeping.
   final String? note;
 
+  @override
   Map<String, dynamic> toJson() {
     return <String, dynamic>{
       'templateId': templateId,
       'accountId': accountId,
       'referenceId': referenceId,
-      'environment':
-          environment != null ? environment.toString().split('.').last : null,
+      'environment': environment?.toString().split('.').last,
       'fields': fields?.toJson(),
       'note': note,
       'theme': iOSTheme?.toJson(),

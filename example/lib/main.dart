@@ -2,12 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:persona_flutter/persona_flutter.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatefulWidget {
+  const MyApp({super.key});
+
   @override
-  _MyAppState createState() => _MyAppState();
+  State<MyApp> createState() => _MyAppState();
 }
 
 class _MyAppState extends State<MyApp> {
@@ -25,10 +27,10 @@ class _MyAppState extends State<MyApp> {
         additionalFields: {"test-1": "test-2", "test-3": 2, "test-4": true},
       ),
       iOSTheme: InquiryTheme(
-        accentColor: Color(0xff22CB8E),
-        primaryColor: Color(0xff22CB8E),
-        buttonBackgroundColor: Color(0xff22CB8E),
-        darkPrimaryColor: Color(0xff167755),
+        accentColor: const Color(0xff22CB8E),
+        primaryColor: const Color(0xff22CB8E),
+        buttonBackgroundColor: const Color(0xff22CB8E),
+        darkPrimaryColor: const Color(0xff167755),
         buttonCornerRadius: 8,
         textFieldCornerRadius: 0,
       ),
@@ -97,7 +99,7 @@ class _MyAppState extends State<MyApp> {
               onPressed: () {
                 PersonaInquiry.start(configuration: _configuration);
               },
-              child: Text("Start Inquiry"),
+              child: const Text("Start Inquiry"),
             ),
           ),
         ),
